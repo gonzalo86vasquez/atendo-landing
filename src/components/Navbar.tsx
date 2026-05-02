@@ -33,7 +33,7 @@ export default function Navbar() {
             <li><a href="#precios">Precios</a></li>
             <li><a href="#faq">Preguntas frecuentes</a></li>
           </ul>
-          <a href="#cta-final" className="btn btn-primary nav-cta">Agendar demo →</a>
+          <a href="#cta-final" className="btn btn-primary nav-cta">Agendar llamada →</a>
         </div>
       </div>
     </nav>

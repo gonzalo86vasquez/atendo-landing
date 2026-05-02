@@ -346,11 +346,111 @@ footer { background: var(--verde); color: rgba(250,250,247,0.5); padding: 40px 0
   100% { transform: scale(1.6); opacity: 0; }
 }
 
+/* ── CONTACT FORM ── */
+.contact-form {
+  max-width: 520px;
+  margin: 0 auto 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.contact-form input,
+.contact-form select {
+  width: 100%;
+  padding: 13px 16px;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: var(--verde);
+  background: rgba(255,255,255,0.95);
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.contact-form select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231B4332' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-color: rgba(255,255,255,0.95);
+  padding-right: 36px;
+}
+.contact-form input:focus,
+.contact-form select:focus { box-shadow: 0 0 0 3px rgba(255,255,255,0.45); }
+.contact-form input::placeholder { color: rgba(27,67,50,0.45); }
+.contact-form .form-submit {
+  grid-column: 1 / -1;
+  background: var(--verde);
+  color: var(--blanco);
+  justify-content: center;
+  padding: 15px 28px;
+  font-size: 16px;
+  border: none;
+}
+.contact-form .form-submit:hover { opacity: 0.9; }
+
+/* ── ADD-ONS ── */
+.addons-section {
+  margin-top: 48px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(250,250,247,0.12);
+}
+.addons-label {
+  font-size: 12px; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(250,250,247,0.45);
+  margin-bottom: 20px; text-align: center;
+}
+.addons-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.addon {
+  border-radius: 12px;
+  padding: 22px 20px;
+  border: 1px solid rgba(250,250,247,0.1);
+  background: rgba(250,250,247,0.05);
+}
+.addon-available {
+  background: rgba(232,87,26,0.1);
+  border-color: rgba(232,87,26,0.3);
+}
+.addon-soon { opacity: 0.5; }
+.addon-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+.addon-name {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--blanco);
+}
+.addon-price {
+  font-size: 14px; font-weight: 700;
+  color: var(--naranja); white-space: nowrap;
+}
+.addon-badge {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: rgba(250,250,247,0.35);
+}
+.addon-desc {
+  font-size: 13px;
+  color: rgba(250,250,247,0.55);
+  line-height: 1.55;
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .problema-grid, .para-quien-grid { grid-template-columns: 1fr; }
-  .steps-grid, .beneficios-grid, .precios-grid { grid-template-columns: 1fr; }
+  .steps-grid, .beneficios-grid, .precios-grid, .addons-grid { grid-template-columns: 1fr; }
+  .contact-form { grid-template-columns: 1fr; }
   section { padding: 64px 0; }
   .phone-shell { width: 220px; }
 }

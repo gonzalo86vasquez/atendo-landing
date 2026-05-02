@@ -7,10 +7,12 @@ gsap.registerPlugin(ScrollTrigger)
 export default function Precios() {
   const sectionRef = useRef<HTMLElement>(null)
   const gridRef = useRef<HTMLDivElement>(null)
+  const addonsRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const sec = sectionRef.current
     const grid = gridRef.current
+    const addons = addonsRef.current
     if (!sec || !grid) return
 
     gsap.from(sec.querySelectorAll('.section-label, .section-title, .section-sub'), {
@@ -21,6 +23,12 @@ export default function Precios() {
       opacity: 0, y: 36, stagger: 0.14, duration: 0.65, ease: 'power2.out',
       scrollTrigger: { trigger: grid, start: 'top 82%' }
     })
+    if (addons) {
+      gsap.from(addons.querySelectorAll('.addon'), {
+        opacity: 0, y: 20, stagger: 0.1, duration: 0.55, ease: 'power2.out',
+        scrollTrigger: { trigger: addons, start: 'top 88%' }
+      })
+    }
   }, [])
 
   return (
@@ -70,6 +78,33 @@ export default function Precios() {
           </div>
         </div>
         <p className="precios-note">Si en los primeros 30 días el agente no está respondiendo como esperabas, lo ajustamos sin costo adicional.</p>
+
+        <div className="addons-section" ref={addonsRef}>
+          <p className="addons-label">Complementá tu plan</p>
+          <div className="addons-grid">
+            <div className="addon addon-available">
+              <div className="addon-header">
+                <span className="addon-name">Mensajes de Voz</span>
+                <span className="addon-price">+ $20.000/mes</span>
+              </div>
+              <p className="addon-desc">Tu cliente manda un audio por WhatsApp, el asistente responde con audio. Sin necesidad de escribir.</p>
+            </div>
+            <div className="addon addon-soon">
+              <div className="addon-header">
+                <span className="addon-name">Agente Multicanal</span>
+                <span className="addon-badge">Próximamente</span>
+              </div>
+              <p className="addon-desc">Extendé tu asistente a Instagram, Messenger y más canales desde un solo lugar.</p>
+            </div>
+            <div className="addon addon-soon">
+              <div className="addon-header">
+                <span className="addon-name">Agendamiento Automático</span>
+                <span className="addon-badge">Próximamente</span>
+              </div>
+              <p className="addon-desc">El asistente confirma y gestiona citas directamente desde la conversación.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

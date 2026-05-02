@@ -38,7 +38,7 @@ export default function Hero() {
           Tu asistente responde las consultas de tu negocio por WhatsApp, Instagram y más — las 24 horas, sin que tengas que estar presente.
         </p>
         <div className="hero-ctas" ref={ctasRef}>
-          <a href="#cta-final" className="btn btn-primary">Agendar demo gratuita →</a>
+          <a href="#cta-final" className="btn btn-primary">Agendar llamada gratuita →</a>
           <a href="#como-funciona" className="btn btn-secondary">Ver cómo funciona ↓</a>
         </div>
         <div className="hero-proof" ref={proofRef}>
