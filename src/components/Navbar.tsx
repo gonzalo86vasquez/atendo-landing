@@ -20,6 +20,7 @@ export default function Navbar() {
     <nav ref={navRef} id="main-nav">
       <div className="container">
         <div className="nav-inner">
+          <a href="/" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }} aria-label="Ir al inicio" style={{ lineHeight: 0 }}>
           <svg className="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 100" role="img" aria-label="Atendo">
             <defs><style>{'@import url(\'https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap\');'}</style></defs>
             <rect x="4" y="5" width="182" height="64" rx="14" fill="none" stroke="#1B4332" strokeWidth="5.5" strokeLinejoin="round"/>
@@ -28,6 +29,7 @@ export default function Navbar() {
             <circle cx="190" cy="69" r="11" fill="#FAFAF7"/>
             <circle cx="190" cy="69" r="8.5" fill="#E8571A"/>
           </svg>
+          </a>
           <ul className="nav-links">
             <li><a href="#como-funciona">Cómo funciona</a></li>
             <li><a href="#precios">Precios</a></li>
