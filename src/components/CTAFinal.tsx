@@ -10,10 +10,14 @@ export default function CTAFinal() {
   useEffect(() => {
     const sec = sectionRef.current
     if (!sec) return
-    gsap.from(sec.querySelectorAll('.section-title, .section-sub, .contact-form, .cta-final-risk'), {
-      opacity: 0, y: 24, stagger: 0.1, duration: 0.65, ease: 'power2.out',
-      scrollTrigger: { trigger: sec, start: 'top 78%' }
+    const ctx = gsap.context(() => {
+      gsap.fromTo(sec.querySelectorAll('.section-title, .section-sub, .contact-form, .cta-final-risk'),
+        { opacity: 0, y: 24 },
+        { opacity: 1, y: 0, stagger: 0.1, duration: 0.65, ease: 'power2.out',
+          scrollTrigger: { trigger: sec, start: 'top 78%' } }
+      )
     })
+    return () => ctx.revert()
   }, [])
 
   return (

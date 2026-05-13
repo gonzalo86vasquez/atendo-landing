@@ -15,27 +15,33 @@ export default function Precios() {
     const addons = addonsRef.current
     if (!sec || !grid) return
 
-    gsap.from(sec.querySelectorAll('.section-label, .section-title, .section-sub'), {
-      opacity: 0, y: 24, stagger: 0.09, duration: 0.65, ease: 'power2.out',
-      scrollTrigger: { trigger: sec, start: 'top 78%' }
+    const ctx = gsap.context(() => {
+      gsap.fromTo(sec.querySelectorAll('.section-label, .section-title, .section-sub'),
+        { opacity: 0, y: 24 },
+        { opacity: 1, y: 0, stagger: 0.09, duration: 0.65, ease: 'power2.out',
+          scrollTrigger: { trigger: sec, start: 'top 78%' } }
+      )
+      gsap.fromTo(grid.querySelectorAll('.plan'),
+        { opacity: 0, y: 36 },
+        { opacity: 1, y: 0, stagger: 0.14, duration: 0.65, ease: 'power2.out',
+          scrollTrigger: { trigger: grid, start: 'top 82%' } }
+      )
+      if (addons) {
+        gsap.fromTo(addons.querySelectorAll('.addon'),
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, stagger: 0.1, duration: 0.55, ease: 'power2.out',
+            scrollTrigger: { trigger: addons, start: 'top 88%' } }
+        )
+      }
     })
-    gsap.from(grid.querySelectorAll('.plan'), {
-      opacity: 0, y: 36, stagger: 0.14, duration: 0.65, ease: 'power2.out',
-      scrollTrigger: { trigger: grid, start: 'top 82%' }
-    })
-    if (addons) {
-      gsap.from(addons.querySelectorAll('.addon'), {
-        opacity: 0, y: 20, stagger: 0.1, duration: 0.55, ease: 'power2.out',
-        scrollTrigger: { trigger: addons, start: 'top 88%' }
-      })
-    }
+    return () => ctx.revert()
   }, [])
 
   return (
     <section className="precios" id="precios" ref={sectionRef}>
       <div className="container">
         <p className="section-label">Precios</p>
-        <h2 className="section-title">Claros, en pesos,<br />sin sorpresas.</h2>
+        <h2 className="section-title">Claros, en pesos chilenos,<br />sin sorpresas.</h2>
         <p className="section-sub">Sin contrato anual. Sin costos ocultos. Puedes pausar o cancelar cuando quieras.</p>
         <div className="precios-grid" ref={gridRef}>
           <div className="plan">
@@ -80,7 +86,7 @@ export default function Precios() {
         <p className="precios-note">Si en los primeros 30 días el agente no está respondiendo como esperabas, lo ajustamos sin costo adicional.</p>
 
         <div className="addons-section" ref={addonsRef}>
-          <p className="addons-label">Complementá tu plan</p>
+          <p className="addons-label">Complementa tu plan</p>
           <div className="addons-grid">
             <div className="addon addon-available">
               <div className="addon-header">
@@ -94,7 +100,7 @@ export default function Precios() {
                 <span className="addon-name">Agente Multicanal</span>
                 <span className="addon-badge">Próximamente</span>
               </div>
-              <p className="addon-desc">Extendé tu asistente a Instagram, Messenger y más canales desde un solo lugar.</p>
+              <p className="addon-desc">Extiende tu asistente a Instagram, Messenger y más canales desde un solo lugar.</p>
             </div>
             <div className="addon addon-soon">
               <div className="addon-header">

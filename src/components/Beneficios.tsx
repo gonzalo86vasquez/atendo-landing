@@ -13,14 +13,19 @@ export default function Beneficios() {
     const grid = gridRef.current
     if (!sec || !grid) return
 
-    gsap.from(sec.querySelectorAll('.section-label, .section-title'), {
-      opacity: 0, y: 24, stagger: 0.09, duration: 0.65, ease: 'power2.out',
-      scrollTrigger: { trigger: sec, start: 'top 78%' }
+    const ctx = gsap.context(() => {
+      gsap.fromTo(sec.querySelectorAll('.section-label, .section-title'),
+        { opacity: 0, y: 24 },
+        { opacity: 1, y: 0, stagger: 0.09, duration: 0.65, ease: 'power2.out',
+          scrollTrigger: { trigger: sec, start: 'top 78%' } }
+      )
+      gsap.fromTo(grid.querySelectorAll('.beneficio'),
+        { opacity: 0, y: 32 },
+        { opacity: 1, y: 0, stagger: 0.14, duration: 0.6, ease: 'power2.out',
+          scrollTrigger: { trigger: grid, start: 'top 82%' } }
+      )
     })
-    gsap.from(grid.querySelectorAll('.beneficio'), {
-      opacity: 0, y: 32, stagger: 0.14, duration: 0.6, ease: 'power2.out',
-      scrollTrigger: { trigger: grid, start: 'top 82%' }
-    })
+    return () => ctx.revert()
   }, [])
 
   return (
@@ -42,7 +47,7 @@ export default function Beneficios() {
           <div className="beneficio">
             <div className="beneficio-icon">🛠️</div>
             <h3>Nosotros lo configuramos todo</h3>
-            <p>No hay plataformas que entender ni configuraciones que hacer. Tú mandas la información, nosotros hacemos el resto.</p>
+            <p>No hay plataformas que entender ni configuraciones que hacer. Tú envías la info, nosotros hacemos el resto.</p>
           </div>
         </div>
       </div>

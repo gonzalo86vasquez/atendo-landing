@@ -33,10 +33,14 @@ export default function FAQ() {
   useEffect(() => {
     const list = listRef.current
     if (!list) return
-    gsap.from(list.querySelectorAll('.faq-item'), {
-      opacity: 0, y: 16, stagger: 0.09, duration: 0.5, ease: 'power2.out',
-      scrollTrigger: { trigger: list, start: 'top 85%' }
+    const ctx = gsap.context(() => {
+      gsap.fromTo(list.querySelectorAll('.faq-item'),
+        { opacity: 0, y: 16 },
+        { opacity: 1, y: 0, stagger: 0.09, duration: 0.5, ease: 'power2.out',
+          scrollTrigger: { trigger: list, start: 'top 85%' } }
+      )
     })
+    return () => ctx.revert()
   }, [])
 
   return (

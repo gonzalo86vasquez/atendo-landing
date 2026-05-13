@@ -2,7 +2,7 @@ export default function WAFloat() {
   return (
     <a
       className="wa-float"
-      href="https://wa.me/56900000000?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20Atendo."
+      href="https://wa.me/56974897031?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20Atendo."
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Contactar por WhatsApp"

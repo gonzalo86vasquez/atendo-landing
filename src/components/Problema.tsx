@@ -14,15 +14,19 @@ export default function Problema() {
     const bullets = bulletsRef.current
     if (!sec || !bullets) return
 
-    gsap.from(sec.querySelectorAll('.section-label, .section-title, .section-sub'), {
-      opacity: 0, y: 24, stagger: 0.09, duration: 0.65, ease: 'power2.out',
-      scrollTrigger: { trigger: sec, start: 'top 78%' }
+    const ctx = gsap.context(() => {
+      gsap.fromTo(sec.querySelectorAll('.section-label, .section-title, .section-sub'),
+        { opacity: 0, y: 24 },
+        { opacity: 1, y: 0, stagger: 0.09, duration: 0.65, ease: 'power2.out',
+          scrollTrigger: { trigger: sec, start: 'top 78%' } }
+      )
+      gsap.fromTo(bullets.querySelectorAll('.problema-bullet'),
+        { opacity: 0, x: -28 },
+        { opacity: 1, x: 0, stagger: 0.16, duration: 0.6, ease: 'power2.out',
+          scrollTrigger: { trigger: bullets, start: 'top 82%' } }
+      )
     })
-
-    gsap.from(bullets.querySelectorAll('.problema-bullet'), {
-      opacity: 0, x: -28, stagger: 0.16, duration: 0.6, ease: 'power2.out',
-      scrollTrigger: { trigger: bullets, start: 'top 82%' }
-    })
+    return () => ctx.revert()
   }, [])
 
   return (
