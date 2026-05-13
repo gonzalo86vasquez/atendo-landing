@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Fondo verde oscuro -->
+  <rect width="1200" height="630" fill="#1B4332"/>
+
+  <!-- Franja decorativa inferior naranja -->
+  <rect x="0" y="590" width="1200" height="40" fill="#E8571A"/>
+
+  <!-- Burbuja de chat (logo Atendo) -->
+  <g transform="translate(100, 180)">
+    <!-- Cuerpo de la burbuja -->
+    <rect x="0" y="0" width="340" height="140" rx="24" ry="24" fill="#ffffff"/>
+    <!-- Cola inferior izquierda -->
+    <path d="M 30 140 L 10 175 L 70 140 Z" fill="#ffffff"/>
+    <!-- Texto "Atendo" -->
+    <text x="170" y="90" font-family="Arial Black, Arial, sans-serif" font-weight="900"
+          font-size="64" fill="#1B4332" text-anchor="middle" dominant-baseline="middle">Atendo</text>
+    <!-- Punto naranja -->
+    <circle cx="316" cy="30" r="16" fill="#E8571A"/>
+  </g>
+
+  <!-- Tagline principal -->
+  <text x="100" y="410" font-family="Arial Black, Arial, sans-serif" font-weight="900"
+        font-size="62" fill="#ffffff" letter-spacing="-1">Ningún cliente</text>
+  <text x="100" y="490" font-family="Arial Black, Arial, sans-serif" font-weight="900"
+        font-size="62" fill="#E8571A" letter-spacing="-1">sin respuesta.</text>
+
+  <!-- Sub-texto -->
+  <text x="100" y="548" font-family="Arial, sans-serif" font-weight="400"
+        font-size="26" fill="#6EE7B7" letter-spacing="0.5">Agente IA para WhatsApp · Chile</text>
+</svg>
