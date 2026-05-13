@@ -15,18 +15,24 @@ export default function ParaQuien() {
     const noList = noRef.current
     if (!sec || !checkList || !noList) return
 
-    gsap.from(sec.querySelectorAll('.section-label, .section-title'), {
-      opacity: 0, y: 24, stagger: 0.09, duration: 0.65, ease: 'power2.out',
-      scrollTrigger: { trigger: sec, start: 'top 78%' }
+    const ctx = gsap.context(() => {
+      gsap.fromTo(sec.querySelectorAll('.section-label, .section-title'),
+        { opacity: 0, y: 24 },
+        { opacity: 1, y: 0, stagger: 0.09, duration: 0.65, ease: 'power2.out',
+          scrollTrigger: { trigger: sec, start: 'top 78%' } }
+      )
+      gsap.fromTo(checkList.querySelectorAll('.check-item'),
+        { opacity: 0, x: -20 },
+        { opacity: 1, x: 0, stagger: 0.11, duration: 0.5, ease: 'power2.out',
+          scrollTrigger: { trigger: checkList, start: 'top 84%' } }
+      )
+      gsap.fromTo(noList.querySelectorAll('.no-item'),
+        { opacity: 0, x: 20 },
+        { opacity: 1, x: 0, stagger: 0.11, duration: 0.5, ease: 'power2.out',
+          scrollTrigger: { trigger: noList, start: 'top 84%' } }
+      )
     })
-    gsap.from(checkList.querySelectorAll('.check-item'), {
-      opacity: 0, x: -20, stagger: 0.11, duration: 0.5, ease: 'power2.out',
-      scrollTrigger: { trigger: checkList, start: 'top 84%' }
-    })
-    gsap.from(noList.querySelectorAll('.no-item'), {
-      opacity: 0, x: 20, stagger: 0.11, duration: 0.5, ease: 'power2.out',
-      scrollTrigger: { trigger: noList, start: 'top 84%' }
-    })
+    return () => ctx.revert()
   }, [])
 
   return (
@@ -42,7 +48,7 @@ export default function ParaQuien() {
             </div>
             <div className="check-item">
               <div className="check-icon">✓</div>
-              <p>Recibes más de 100 mensajes al mes con preguntas que siempre son las mismas.</p>
+              <p>Recibes consultas repetidas por WhatsApp u otros canales — precios, horarios, disponibilidad.</p>
             </div>
             <div className="check-item">
               <div className="check-icon">✓</div>
@@ -62,7 +68,7 @@ export default function ParaQuien() {
               </div>
               <div className="no-item">
                 <div className="no-icon">—</div>
-                <p>Tu negocio recibe menos de 50 mensajes al mes en total.</p>
+                <p>Tu negocio casi no recibe mensajes de clientes por canales digitales.</p>
               </div>
             </div>
           </div>

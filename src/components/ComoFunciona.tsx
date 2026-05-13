@@ -15,18 +15,24 @@ export default function ComoFunciona() {
     const cta = ctaRef.current
     if (!sec || !grid || !cta) return
 
-    gsap.from(sec.querySelectorAll('.section-label, .section-title, .section-sub'), {
-      opacity: 0, y: 24, stagger: 0.09, duration: 0.65, ease: 'power2.out',
-      scrollTrigger: { trigger: sec, start: 'top 78%' }
+    const ctx = gsap.context(() => {
+      gsap.fromTo(sec.querySelectorAll('.section-label, .section-title, .section-sub'),
+        { opacity: 0, y: 24 },
+        { opacity: 1, y: 0, stagger: 0.09, duration: 0.65, ease: 'power2.out',
+          scrollTrigger: { trigger: sec, start: 'top 78%' } }
+      )
+      gsap.fromTo(grid.querySelectorAll('.step'),
+        { opacity: 0, x: 40 },
+        { opacity: 1, x: 0, stagger: 0.18, duration: 0.65, ease: 'power2.out',
+          scrollTrigger: { trigger: grid, start: 'top 82%' } }
+      )
+      gsap.fromTo(cta,
+        { opacity: 0, y: 16 },
+        { opacity: 1, y: 0, duration: 0.5,
+          scrollTrigger: { trigger: cta, start: 'top 92%' } }
+      )
     })
-    gsap.from(grid.querySelectorAll('.step'), {
-      opacity: 0, x: 40, stagger: 0.18, duration: 0.65, ease: 'power2.out',
-      scrollTrigger: { trigger: grid, start: 'top 82%' }
-    })
-    gsap.from(cta, {
-      opacity: 0, y: 16, duration: 0.5,
-      scrollTrigger: { trigger: cta, start: 'top 92%' }
-    })
+    return () => ctx.revert()
   }, [])
 
   return (
@@ -38,13 +44,13 @@ export default function ComoFunciona() {
         <div className="steps-grid" ref={gridRef}>
           <div className="step">
             <div className="step-number">01</div>
-            <h3>Nos mandas tus documentos</h3>
+            <h3>Envíanos tus documentos</h3>
             <p>Precios, horarios, preguntas frecuentes, lo que hoy les dices a tus clientes — en cualquier formato.</p>
           </div>
           <div className="step">
             <div className="step-number">02</div>
             <h3>Entrenamos a tu asistente</h3>
-            <p>Configuramos el asistente con la voz y la información de tu negocio. Lo revisas y nos dices si algo hay que ajustar.</p>
+            <p>Configuramos el asistente con la voz y la información de tu negocio. Lo revisas y nos dices qué ajustar.</p>
           </div>
           <div className="step">
             <div className="step-number">03</div>
