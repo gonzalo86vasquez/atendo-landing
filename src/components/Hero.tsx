@@ -90,7 +90,7 @@ export default function Hero() {
             </div>
             <div className="hero-proof" ref={proofRef}>
               <span>Sin contrato anual</span>
-              <span>Configúralo en menos de una semana</span>
+              <span>Lo configuramos en tan solo unos días</span>
               <span>Precios en pesos chilenos</span>
             </div>
           </div>

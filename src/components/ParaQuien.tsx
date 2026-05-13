@@ -48,7 +48,7 @@ export default function ParaQuien() {
             </div>
             <div className="check-item">
               <div className="check-icon">✓</div>
-              <p>Recibes más de 100 mensajes al mes con preguntas que siempre son las mismas.</p>
+              <p>Recibes consultas repetidas por WhatsApp u otros canales — precios, horarios, disponibilidad.</p>
             </div>
             <div className="check-item">
               <div className="check-icon">✓</div>
@@ -68,7 +68,7 @@ export default function ParaQuien() {
               </div>
               <div className="no-item">
                 <div className="no-icon">—</div>
-                <p>Tu negocio recibe menos de 50 mensajes al mes en total.</p>
+                <p>Tu negocio casi no recibe mensajes de clientes por canales digitales.</p>
               </div>
             </div>
           </div>
