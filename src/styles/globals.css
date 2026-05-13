@@ -517,9 +517,7 @@ footer { background: var(--verde); color: rgba(250,250,247,0.5); padding: 40px 0
   .hero-content p { max-width: 100%; margin-left: auto; margin-right: auto; }
   .hero-proof { flex-direction: column; align-items: center; row-gap: 6px; }
   .hero-proof span:not(:last-child)::after { content: none; }
-  .logo-svg-hero-large { height: 90px; }
-  .hero-visual { gap: 20px; padding: 0; }
-  .hero-chat { max-width: 260px; margin: 0 auto; }
+  .hero-visual { display: none; }
   .problema-grid, .para-quien-grid { grid-template-columns: 1fr; }
   .steps-grid, .beneficios-grid, .precios-grid, .addons-grid { grid-template-columns: 1fr; }
   .contact-form { grid-template-columns: 1fr; }
