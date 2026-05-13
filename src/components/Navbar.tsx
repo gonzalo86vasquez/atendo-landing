@@ -1,19 +1,51 @@
 import { useEffect, useRef } from 'react'
+import gsap from 'gsap'
+import AtendoLogo from './AtendoLogo'
 
 export default function Navbar() {
-  const navRef = useRef<HTMLElement>(null)
+  const navRef    = useRef<HTMLElement>(null)
+  const bubbleRef = useRef<SVGPathElement>(null)
+  const textRef   = useRef<SVGTextElement>(null)
+  const dotRef    = useRef<SVGCircleElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
       if (!navRef.current) return
-      if (window.scrollY > 60) {
-        navRef.current.classList.add('scrolled')
-      } else {
-        navRef.current.classList.remove('scrolled')
-      }
+      navRef.current.classList.toggle('scrolled', window.scrollY > 60)
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => {
+    const bubble = bubbleRef.current
+    const text   = textRef.current
+    const dot    = dotRef.current
+    if (!bubble || !text || !dot) return
+
+    let pulseTween: gsap.core.Tween | null = null
+
+    const ctx = gsap.context(() => {
+      gsap.set(bubble, { opacity: 0, scale: 0.82, transformOrigin: '50% 60%' })
+      gsap.set(text,   { opacity: 0, y: 5 })
+      gsap.set(dot,    { opacity: 0, scale: 0, transformOrigin: 'center center' })
+
+      gsap.timeline()
+        .to(bubble, { opacity: 1, scale: 1, duration: 0.38, ease: 'back.out(1.6)' })
+        .to(text,   { opacity: 1, y: 0, duration: 0.28, ease: 'power2.out' }, '-=0.18')
+        .to(dot,    { opacity: 1, scale: 1, duration: 0.3, ease: 'back.out(2.2)', transformOrigin: 'center center' }, '-=0.12')
+        .call(() => {
+          pulseTween = gsap.to(dot, {
+            scale: 1.22, duration: 1.1, ease: 'sine.inOut',
+            yoyo: true, repeat: -1, transformOrigin: 'center center',
+          })
+        })
+    })
+
+    return () => {
+      ctx.revert()
+      pulseTween?.kill()
+    }
   }, [])
 
   return (
@@ -21,21 +53,14 @@ export default function Navbar() {
       <div className="container">
         <div className="nav-inner">
           <a href="/" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }} aria-label="Ir al inicio" style={{ lineHeight: 0 }}>
-          <svg className="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 100" role="img" aria-label="Atendo">
-            <defs><style>{'@import url(\'https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap\');'}</style></defs>
-            <rect x="4" y="5" width="182" height="64" rx="14" fill="none" stroke="#1B4332" strokeWidth="5.5" strokeLinejoin="round"/>
-            <text x="95" y="45" textAnchor="middle" fontFamily="'Nunito', sans-serif" fontWeight="800" fontSize="30" fill="#1B4332" letterSpacing="-0.9">Atendo</text>
-            <path d="M 14,69 L 4,93 L 30,77" fill="#1B4332"/>
-            <circle cx="190" cy="69" r="11" fill="#FAFAF7"/>
-            <circle cx="190" cy="69" r="8.5" fill="#E8571A"/>
-          </svg>
+            <AtendoLogo className="logo-svg" bubbleRef={bubbleRef} textRef={textRef} dotRef={dotRef} />
           </a>
           <ul className="nav-links">
             <li><a href="#como-funciona">Cómo funciona</a></li>
             <li><a href="#precios">Precios</a></li>
             <li><a href="#faq">Preguntas frecuentes</a></li>
           </ul>
-          <a href="#cta-final" className="btn btn-primary nav-cta">Agendar llamada →</a>
+          <a href="#cta-final" className="btn btn-primary nav-cta">Agenda una llamada →</a>
         </div>
       </div>
     </nav>

@@ -10,16 +10,20 @@ export default function ProofBar() {
   useEffect(() => {
     const el = ref.current
     if (!el) return
-    gsap.from(el.querySelector('p'), {
-      opacity: 0, y: 12, duration: 0.6, ease: 'power2.out',
-      scrollTrigger: { trigger: el, start: 'top 92%' }
+    const ctx = gsap.context(() => {
+      gsap.fromTo(el.querySelector('p'),
+        { opacity: 0, y: 12 },
+        { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out',
+          scrollTrigger: { trigger: el, start: 'top 92%' } }
+      )
     })
+    return () => ctx.revert()
   }, [])
 
   return (
     <div className="proof-bar" ref={ref}>
       <div className="container">
-        <p>Usado por negocios locales en Santiago · <strong>Hecho en Chile</strong></p>
+        <p>Usado por negocios en Chile · <strong>Hecho en Santiago</strong></p>
       </div>
     </div>
   )

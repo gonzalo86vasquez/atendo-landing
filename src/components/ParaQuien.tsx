@@ -15,18 +15,24 @@ export default function ParaQuien() {
     const noList = noRef.current
     if (!sec || !checkList || !noList) return
 
-    gsap.from(sec.querySelectorAll('.section-label, .section-title'), {
-      opacity: 0, y: 24, stagger: 0.09, duration: 0.65, ease: 'power2.out',
-      scrollTrigger: { trigger: sec, start: 'top 78%' }
+    const ctx = gsap.context(() => {
+      gsap.fromTo(sec.querySelectorAll('.section-label, .section-title'),
+        { opacity: 0, y: 24 },
+        { opacity: 1, y: 0, stagger: 0.09, duration: 0.65, ease: 'power2.out',
+          scrollTrigger: { trigger: sec, start: 'top 78%' } }
+      )
+      gsap.fromTo(checkList.querySelectorAll('.check-item'),
+        { opacity: 0, x: -20 },
+        { opacity: 1, x: 0, stagger: 0.11, duration: 0.5, ease: 'power2.out',
+          scrollTrigger: { trigger: checkList, start: 'top 84%' } }
+      )
+      gsap.fromTo(noList.querySelectorAll('.no-item'),
+        { opacity: 0, x: 20 },
+        { opacity: 1, x: 0, stagger: 0.11, duration: 0.5, ease: 'power2.out',
+          scrollTrigger: { trigger: noList, start: 'top 84%' } }
+      )
     })
-    gsap.from(checkList.querySelectorAll('.check-item'), {
-      opacity: 0, x: -20, stagger: 0.11, duration: 0.5, ease: 'power2.out',
-      scrollTrigger: { trigger: checkList, start: 'top 84%' }
-    })
-    gsap.from(noList.querySelectorAll('.no-item'), {
-      opacity: 0, x: 20, stagger: 0.11, duration: 0.5, ease: 'power2.out',
-      scrollTrigger: { trigger: noList, start: 'top 84%' }
-    })
+    return () => ctx.revert()
   }, [])
 
   return (
