@@ -1,8 +1,15 @@
-import { useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
+
+function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  e.preventDefault()
+  const data = new FormData(e.currentTarget)
+  const msg = `Hola, mi nombre es ${data.get('nombre')}, del negocio ${data.get('negocio')}. Tenemos ${data.get('mensajes')} mensajes por mes. Mi teléfono es ${data.get('telefono')}. Estoy interesado en cotizar los servicios de Atendo.`
+  window.open(`https://wa.me/56974897031?text=${encodeURIComponent(msg)}`, '_blank')
+}
 
 export default function CTAFinal() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -25,7 +32,7 @@ export default function CTAFinal() {
       <div className="container">
         <h2 className="section-title">Tu negocio puede estar disponible mañana a las 8 AM — y también a las 2 AM.</h2>
         <p className="section-sub">Conversamos 20 minutos para entender tu negocio y ver si Atendo es el fit correcto. Sin compromiso, sin tecnicismos.</p>
-        <form className="contact-form" id="contactForm" action="https://formspree.io/f/FORM_ID" method="POST">
+        <form className="contact-form" id="contactForm" onSubmit={handleSubmit}>
           <input type="text" name="nombre" placeholder="Tu nombre" required autoComplete="name" />
           <input type="text" name="negocio" placeholder="Tipo de negocio (ej: clínica, taller)" required />
           <select name="mensajes" required defaultValue="">
