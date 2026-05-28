@@ -8,7 +8,7 @@ function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
   e.preventDefault()
   const data = new FormData(e.currentTarget)
   const msg = `Hola, mi nombre es ${data.get('nombre')}, del negocio ${data.get('negocio')}. Tenemos ${data.get('mensajes')} mensajes por mes. Mi teléfono es ${data.get('telefono')}. Estoy interesado en cotizar los servicios de Atendo.`
-  window.open(`https://wa.me/56974897031?text=${encodeURIComponent(msg)}`, '_blank')
+  window.open(`https://wa.me/56930129028?text=${encodeURIComponent(msg)}`, '_blank')
 }
 
 export default function CTAFinal() {
