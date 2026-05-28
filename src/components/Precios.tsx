@@ -53,6 +53,8 @@ export default function Precios() {
               <div className="plan-feature">1 agente configurado</div>
               <div className="plan-feature">Hasta 500 conversaciones/mes</div>
               <div className="plan-feature">Soporte por WhatsApp</div>
+              <div className="plan-feature plan-feature-locked">Mensajes de Voz <span className="feature-lock-badge">Solo Business</span></div>
+              <div className="plan-feature plan-feature-locked">Agendamiento automático <span className="feature-lock-badge">Solo Business</span></div>
             </div>
             <a href="#cta-final" className="btn btn-secondary plan-cta">Empezar →</a>
           </div>
@@ -65,6 +67,8 @@ export default function Precios() {
             <div className="plan-features">
               <div className="plan-feature">1 agente configurado</div>
               <div className="plan-feature">Conversaciones ilimitadas</div>
+              <div className="plan-feature">Mensajes de Voz incluidos</div>
+              <div className="plan-feature">Agendamiento automático</div>
               <div className="plan-feature">Actualizaciones de contenido incluidas</div>
               <div className="plan-feature">Soporte prioritario</div>
             </div>
@@ -78,6 +82,8 @@ export default function Precios() {
             <div className="plan-features">
               <div className="plan-feature">Configuración a medida</div>
               <div className="plan-feature">Múltiples agentes</div>
+              <div className="plan-feature">Mensajes de Voz incluidos</div>
+              <div className="plan-feature">Agendamiento automático</div>
               <div className="plan-feature">Onboarding presencial o por videollamada</div>
             </div>
             <a href="#cta-final" className="btn btn-secondary plan-cta">Conversar →</a>
@@ -86,14 +92,14 @@ export default function Precios() {
         <p className="precios-note">Si en los primeros 30 días el agente no está respondiendo como esperabas, lo ajustamos sin costo adicional.</p>
 
         <div className="addons-section" ref={addonsRef}>
-          <p className="addons-label">Complementa tu plan</p>
-          <div className="addons-grid">
+          <p className="addons-label">Complemento para plan Starter</p>
+          <div className="addons-grid addons-grid-2">
             <div className="addon addon-available">
               <div className="addon-header">
                 <span className="addon-name">Mensajes de Voz</span>
                 <span className="addon-price">+ $20.000/mes</span>
               </div>
-              <p className="addon-desc">Tu cliente manda un audio por WhatsApp, el asistente responde con audio. Sin necesidad de escribir.</p>
+              <p className="addon-desc">Tu cliente manda un audio por WhatsApp, el asistente responde con audio. Incluido en Business.</p>
             </div>
             <div className="addon addon-soon">
               <div className="addon-header">
@@ -101,13 +107,6 @@ export default function Precios() {
                 <span className="addon-badge">Próximamente</span>
               </div>
               <p className="addon-desc">Extiende tu asistente a Instagram, Messenger y más canales desde un solo lugar.</p>
-            </div>
-            <div className="addon addon-soon">
-              <div className="addon-header">
-                <span className="addon-name">Agendamiento Automático</span>
-                <span className="addon-badge">Próximamente</span>
-              </div>
-              <p className="addon-desc">El asistente confirma y gestiona citas directamente desde la conversación.</p>
             </div>
           </div>
         </div>
