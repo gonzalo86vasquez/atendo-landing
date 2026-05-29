@@ -53,8 +53,8 @@ export default function Precios() {
               <div className="plan-feature">1 agente configurado</div>
               <div className="plan-feature">Hasta 500 conversaciones/mes</div>
               <div className="plan-feature">Soporte por WhatsApp</div>
-              <div className="plan-feature plan-feature-locked">Mensajes de Voz <span className="feature-lock-badge">Solo Business</span></div>
-              <div className="plan-feature plan-feature-locked">Agendamiento automático <span className="feature-lock-badge">Solo Business</span></div>
+              <div className="plan-feature plan-feature-locked"><span>Mensajes de Voz</span><span className="feature-lock-badge">Solo Business</span></div>
+              <div className="plan-feature plan-feature-locked"><span>Agendamiento automático</span><span className="feature-lock-badge">Solo Business</span></div>
             </div>
             <a href="#cta-final" className="btn btn-secondary plan-cta">Empezar →</a>
           </div>

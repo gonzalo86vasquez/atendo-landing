@@ -23,7 +23,7 @@ export default function ProofBar() {
   return (
     <div className="proof-bar" ref={ref}>
       <div className="container">
-        <p>Usado por negocios en Chile · <strong>Hecho en Santiago</strong></p>
+        <p>Usado por negocios en Chile · <strong>Hecho en Chile</strong></p>
       </div>
     </div>
   )

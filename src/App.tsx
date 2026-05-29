@@ -11,6 +11,7 @@ import FAQ from './components/FAQ'
 import CTAFinal from './components/CTAFinal'
 import Footer from './components/Footer'
 import WAFloat from './components/WAFloat'
+import ScrollToTop from './components/ScrollToTop'
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
       <CTAFinal />
       <Footer />
       <WAFloat />
+      <ScrollToTop />
     </>
   )
 }

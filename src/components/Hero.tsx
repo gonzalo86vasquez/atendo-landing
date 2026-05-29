@@ -71,6 +71,9 @@ export default function Hero() {
         <div className="hero-grid">
 
           <div className="hero-content">
+            <div className="hero-logo-mobile">
+              <AtendoLogo className="logo-svg-hero-mobile" />
+            </div>
             <p className="hero-overline" ref={overlineRef}>Agente IA para WhatsApp · Chile</p>
             <h1 ref={h1Ref}>
               <span className="word">Ningún</span>{' '}
