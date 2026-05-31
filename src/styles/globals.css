@@ -287,13 +287,55 @@ section { padding: 96px 0; }
   28% { transform: translateY(-5px); opacity: 1; }
 }
 
-/* ── STEPS ── */
-.steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 56px; }
-.step { background: var(--gris-claro); border-radius: 16px; padding: 32px 28px; }
-.step-number { font-family: 'Nunito', sans-serif; font-size: 48px; font-weight: 800; color: var(--naranja); opacity: 0.25; line-height: 1; margin-bottom: 12px; }
-.step h3 { font-family: 'Nunito', sans-serif; font-size: 20px; font-weight: 800; margin-bottom: 10px; }
-.step p { font-size: 15px; color: var(--gris-texto); line-height: 1.55; }
-.steps-cta { text-align: center; margin-top: 48px; }
+/* ── COMO FUNCIONA (scroll-driven roadmap) ── */
+.cf-section {
+  padding: 56px 0 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.cf-header { padding-bottom: 40px; }
+.cf-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+}
+.cf-body .container { width: 100%; }
+.cf-inner {
+  display: flex;
+  align-items: center;
+  gap: 72px;
+  width: 100%;
+  padding-bottom: 40px;
+}
+.cf-roadmap { width: 150px; flex-shrink: 0; }
+.cf-svg { display: block; width: 100%; height: auto; }
+.cf-panel { flex: 1; position: relative; min-height: 260px; }
+.cf-step { position: absolute; top: 0; left: 0; right: 0; }
+.cf-step-num {
+  display: block;
+  font-family: 'Nunito', sans-serif; font-weight: 800;
+  font-size: 80px; color: var(--naranja); opacity: 0.14;
+  line-height: 1; margin-bottom: -4px;
+}
+.cf-step-title {
+  font-family: 'Nunito', sans-serif; font-weight: 800;
+  font-size: clamp(26px, 3vw, 38px); line-height: 1.12;
+  letter-spacing: -0.02em; margin-bottom: 16px;
+}
+.cf-step-desc { font-size: 17px; color: var(--gris-texto); line-height: 1.62; max-width: 500px; }
+
+/* Mobile cards */
+.cf-mobile-wrap { display: none; }
+.cf-mobile { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 40px; }
+.cf-card { background: var(--gris-claro); border-radius: 16px; padding: 28px 24px; }
+.cf-card-num { font-family: 'Nunito', sans-serif; font-size: 42px; font-weight: 800; color: var(--naranja); opacity: 0.25; line-height: 1; margin-bottom: 10px; }
+.cf-card-title { font-family: 'Nunito', sans-serif; font-size: 18px; font-weight: 800; margin-bottom: 8px; }
+.cf-card-desc { font-size: 14px; color: var(--gris-texto); line-height: 1.55; }
+.cf-cta { text-align: center; margin-top: 32px; }
 
 /* ── BENEFICIOS ── */
 .beneficios { background: var(--gris-claro); }
@@ -569,6 +611,9 @@ footer { background: var(--verde); color: rgba(250,250,247,0.5); padding: 40px 0
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   .nav-links { display: none; }
+  .cf-section { height: auto; padding: 64px 0; overflow: visible; }
+  .cf-body { display: none; }
+  .cf-mobile-wrap { display: block; }
   .hero-logo-mobile { display: flex; justify-content: center; margin-bottom: 20px; }
   .logo-svg-hero-mobile { height: 80px; width: auto; display: block; }
   .hero-grid { grid-template-columns: 1fr; min-height: unset; gap: 32px; }
