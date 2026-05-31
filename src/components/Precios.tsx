@@ -68,7 +68,7 @@ export default function Precios() {
               <div className="plan-feature">1 agente configurado</div>
               <div className="plan-feature">Conversaciones ilimitadas</div>
               <div className="plan-feature">Mensajes de Voz incluidos</div>
-              <div className="plan-feature">Agendamiento automático</div>
+              <div className="plan-feature">Agendamiento automático (1 calendario)</div>
               <div className="plan-feature">Actualizaciones de contenido incluidas</div>
               <div className="plan-feature">Soporte prioritario</div>
             </div>
@@ -83,7 +83,7 @@ export default function Precios() {
               <div className="plan-feature">Configuración a medida</div>
               <div className="plan-feature">Múltiples agentes</div>
               <div className="plan-feature">Mensajes de Voz incluidos</div>
-              <div className="plan-feature">Agendamiento automático</div>
+              <div className="plan-feature">Agendamiento automático (múltiples calendarios)</div>
               <div className="plan-feature">Onboarding presencial o por videollamada</div>
             </div>
             <a href="#cta-final" className="btn btn-secondary plan-cta">Conversar →</a>
