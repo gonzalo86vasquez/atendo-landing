@@ -646,7 +646,7 @@ footer { background: var(--verde); color: rgba(250,250,247,0.5); padding: 40px 0
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .hero-logo-mobile { display: flex; justify-content: center; margin-bottom: 20px; }
-  .logo-svg-hero-mobile { height: 80px; width: auto; display: block; }
+  .logo-svg-hero-mobile { height: 80px; width: auto; display: block; animation: heroFloat 5s ease-in-out 2s infinite; }
   .hero-grid { grid-template-columns: 1fr; min-height: unset; gap: 32px; }
   .hero-content { text-align: center; }
   .hero-ctas { justify-content: center; }
