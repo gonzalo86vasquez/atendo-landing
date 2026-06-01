@@ -678,4 +678,5 @@ footer { background: var(--verde); color: rgba(250,250,247,0.5); padding: 40px 0
   .contact-form { grid-template-columns: 1fr; }
   section { padding: 64px 0; }
   .phone-shell { width: 220px; }
+  .wa-float-label { white-space: normal; max-width: 120px; text-align: center; }
 }
