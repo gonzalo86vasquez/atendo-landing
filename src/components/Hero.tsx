@@ -6,6 +6,9 @@ export default function Hero() {
   const bubbleRef   = useRef<SVGPathElement>(null)
   const textRef     = useRef<SVGTextElement>(null)
   const dotRef      = useRef<SVGCircleElement>(null)
+  const mobileBubbleRef = useRef<SVGPathElement>(null)
+  const mobileTextRef   = useRef<SVGTextElement>(null)
+  const mobileDotRef    = useRef<SVGCircleElement>(null)
   const h1Ref       = useRef<HTMLHeadingElement>(null)
   const overlineRef = useRef<HTMLParagraphElement>(null)
   const pRef        = useRef<HTMLParagraphElement>(null)
@@ -29,21 +32,27 @@ export default function Hero() {
       gsap.set(bubble,   { opacity: 0, scale: 0.7, transformOrigin: '50% 60%' })
       gsap.set(text,     { opacity: 0, y: 8 })
       gsap.set(dot,      { opacity: 0, scale: 0, transformOrigin: 'center center' })
+      gsap.set(mobileBubbleRef.current, { opacity: 0, scale: 0.7, transformOrigin: '50% 60%' })
+      gsap.set(mobileTextRef.current,   { opacity: 0, y: 8 })
+      gsap.set(mobileDotRef.current,    { opacity: 0, scale: 0, transformOrigin: 'center center' })
       gsap.set(words,    { opacity: 0, y: 28 })
       gsap.set([overlineRef.current, pRef.current, ctasRef.current, proofRef.current], { opacity: 0, y: 16 })
       gsap.set([b1Ref.current, b2Ref.current, b3Ref.current], { opacity: 0, y: 8 })
 
       gsap.timeline({ delay: 0.1 })
         .to(bubble, { opacity: 1, scale: 1, duration: 0.55, ease: 'back.out(2.0)' })
+        .to(mobileBubbleRef.current, { opacity: 1, scale: 1, duration: 0.55, ease: 'back.out(2.0)' }, '<')
         .to(text,   { opacity: 1, y: 0, duration: 0.38, ease: 'power3.out' }, '-=0.30')
+        .to(mobileTextRef.current,   { opacity: 1, y: 0, duration: 0.38, ease: 'power3.out' }, '<')
         .to(dot,    { opacity: 1, scale: 1, duration: 0.4, ease: 'back.out(2.8)', transformOrigin: 'center center' }, '-=0.20')
+        .to(mobileDotRef.current,    { opacity: 1, scale: 1, duration: 0.4, ease: 'back.out(2.8)', transformOrigin: 'center center' }, '<')
         .to(overlineRef.current, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }, '+=0.05')
         .to(words,  { opacity: 1, y: 0, stagger: 0.07, duration: 0.65, ease: 'power3.out' }, '-=0.2')
         .to(pRef.current,    { opacity: 1, y: 0, duration: 0.5,  ease: 'power2.out' }, '-=0.3')
         .to(ctasRef.current, { opacity: 1, y: 0, duration: 0.45, ease: 'power2.out' }, '-=0.25')
         .to(proofRef.current,{ opacity: 1, y: 0, duration: 0.4,  ease: 'power2.out' }, '-=0.15')
         .call(() => {
-          gsap.to(dot, {
+          gsap.to([dot, mobileDotRef.current], {
             scale: 1.18, duration: 1.4, ease: 'sine.inOut',
             yoyo: true, repeat: -1, transformOrigin: 'center center',
           })
@@ -72,7 +81,12 @@ export default function Hero() {
 
           <div className="hero-content">
             <div className="hero-logo-mobile">
-              <AtendoLogo className="logo-svg-hero-mobile" />
+              <AtendoLogo
+                className="logo-svg-hero-mobile"
+                bubbleRef={mobileBubbleRef}
+                textRef={mobileTextRef}
+                dotRef={mobileDotRef}
+              />
             </div>
             <p className="hero-overline" ref={overlineRef}>Agente IA para WhatsApp · Chile</p>
             <h1 ref={h1Ref}>
