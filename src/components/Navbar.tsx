@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useLayoutEffect, useRef } from 'react'
 import gsap from 'gsap'
 import AtendoLogo from './AtendoLogo'
 
@@ -17,7 +17,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const bubble = bubbleRef.current
     const text   = textRef.current
     const dot    = dotRef.current

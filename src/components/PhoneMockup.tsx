@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useLayoutEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -16,7 +16,7 @@ export default function PhoneMockup() {
   const time3Ref = useRef<HTMLDivElement>(null)
   const typingRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const shell = shellRef.current
     const badge = badgeRef.current as HTMLDivElement
     if (!shell || !badge) return

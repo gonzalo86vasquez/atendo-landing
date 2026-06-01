@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useLayoutEffect, useRef } from 'react'
 import gsap from 'gsap'
 import AtendoLogo from './AtendoLogo'
 
@@ -18,7 +18,7 @@ export default function Hero() {
   const b2Ref       = useRef<HTMLDivElement>(null)
   const b3Ref       = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const h1     = h1Ref.current
     const bubble = bubbleRef.current
     const text   = textRef.current
