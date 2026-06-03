@@ -49,6 +49,11 @@ export default function Beneficios() {
             <h3>Nosotros lo configuramos todo</h3>
             <p>No hay plataformas que entender ni configuraciones que hacer. Tú envías la info, nosotros hacemos el resto.</p>
           </div>
+          <div className="beneficio">
+            <div className="beneficio-icon">📋</div>
+            <h3>Cada conversación, un contacto nuevo</h3>
+            <p>Atendo registra automáticamente a cada persona que te escribe: nombre, intención de compra y si está lista para cerrar. Sin formularios, sin trabajo manual.</p>
+          </div>
         </div>
       </div>
     </section>
