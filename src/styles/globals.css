@@ -141,6 +141,8 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(0,0,0,0.09); }
 .proof-bar { background: var(--gris-claro); padding: 20px 0; text-align: center; }
 .proof-bar p { font-size: 13px; color: var(--gris-texto); font-weight: 500; }
 .proof-bar strong { color: var(--verde); }
+.proof-bar a { color: var(--verde); text-decoration: underline; text-underline-offset: 2px; transition: opacity 0.15s; }
+.proof-bar a:hover { opacity: 0.7; }
 
 /* ── SECTIONS ── */
 section { padding: 96px 0; }
