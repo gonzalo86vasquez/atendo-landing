@@ -85,6 +85,7 @@ export default function Precios() {
               <div className="plan-feature">Mensajes de Voz incluidos</div>
               <div className="plan-feature">Agendamiento automático (múltiples calendarios)</div>
               <div className="plan-feature">Onboarding presencial o por videollamada</div>
+              <div className="plan-feature">Personalizaciones e integraciones a medida</div>
             </div>
             <a href="#cta-final" className="btn btn-secondary plan-cta">Conversar →</a>
           </div>

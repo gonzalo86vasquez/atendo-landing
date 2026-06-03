@@ -2,13 +2,17 @@ import type { RefObject } from 'react'
 
 interface AtendoLogoProps {
   className?: string
+  variant?: 'default' | 'inverted'
   svgRef?: RefObject<SVGSVGElement | null>
   bubbleRef?: RefObject<SVGPathElement | null>
   textRef?: RefObject<SVGTextElement | null>
   dotRef?: RefObject<SVGCircleElement | null>
 }
 
-export default function AtendoLogo({ className, svgRef, bubbleRef, textRef, dotRef }: AtendoLogoProps) {
+export default function AtendoLogo({ className, variant = 'default', svgRef, bubbleRef, textRef, dotRef }: AtendoLogoProps) {
+  const bubbleFill = variant === 'inverted' ? '#FAFAF7' : '#1B4332'
+  const textFill   = variant === 'inverted' ? '#1B4332' : '#FAFAF7'
+
   return (
     <svg
       ref={svgRef}
@@ -21,7 +25,7 @@ export default function AtendoLogo({ className, svgRef, bubbleRef, textRef, dotR
       <path
         ref={bubbleRef}
         d="M14,4 H172 Q186,4 186,18 V54 Q186,68 172,68 H48 Q44,68 42,72 L30,84 Q28,86 26,84 L20,76 Q18,72 14,72 H14 Q0,72 0,58 V18 Q0,4 14,4 Z"
-        fill="#1B4332"
+        fill={bubbleFill}
       />
       <text
         ref={textRef}
@@ -31,7 +35,7 @@ export default function AtendoLogo({ className, svgRef, bubbleRef, textRef, dotR
         fontFamily="'Nunito', sans-serif"
         fontWeight="800"
         fontSize="32"
-        fill="#FAFAF7"
+        fill={textFill}
         letterSpacing="-1"
       >
         Atendo

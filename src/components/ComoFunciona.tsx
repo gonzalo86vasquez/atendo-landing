@@ -84,7 +84,7 @@ export default function ComoFunciona() {
             <div className="step-card">
               <span className="step-paso">PASO 02</span>
               <h3>Entrenamos a tu asistente</h3>
-              <p>Configuramos el asistente con la voz y la información de tu negocio. Lo revisas y nos dices qué ajustar.</p>
+              <p>Configuramos el asistente con la personalidad y la información de tu negocio. Lo revisas y nos dices qué ajustar.</p>
               <span className="step-tag">2–3 días hábiles</span>
             </div>
           </div>

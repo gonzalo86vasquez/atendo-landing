@@ -448,10 +448,16 @@ section { padding: 96px 0; }
 /* ── FOOTER ── */
 footer { background: var(--verde); color: rgba(250,250,247,0.5); padding: 40px 0; }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.footer-brand { display: flex; align-items: center; gap: 16px; }
+.footer-logo-svg { height: 44px; width: auto; opacity: 0.9; flex-shrink: 0; }
+.footer-brand-text { display: flex; flex-direction: column; gap: 5px; }
+.footer-copy { font-size: 13px; }
+.footer-meteoralabs { font-size: 13px; color: rgba(250,250,247,0.55); }
+.footer-meteoralabs a { color: rgba(250,250,247,0.8); text-decoration: none; font-weight: 600; transition: color 0.15s; }
+.footer-meteoralabs a:hover { color: var(--blanco); }
 .footer-links { display: flex; gap: 24px; }
 .footer-links a { color: rgba(250,250,247,0.5); text-decoration: none; font-size: 13px; transition: color 0.15s; }
 .footer-links a:hover { color: var(--blanco); }
-.footer-copy { font-size: 13px; }
 
 /* ── WHATSAPP FLOAT ── */
 .wa-float {
@@ -679,4 +685,7 @@ footer { background: var(--verde); color: rgba(250,250,247,0.5); padding: 40px 0
   section { padding: 64px 0; }
   .phone-shell { width: 220px; }
   .wa-float-label { white-space: normal; max-width: 120px; text-align: center; }
+  footer { padding-bottom: 88px; }
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .footer-links { flex-wrap: wrap; gap: 16px; }
 }

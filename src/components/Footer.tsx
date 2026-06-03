@@ -1,9 +1,20 @@
+import AtendoLogo from './AtendoLogo'
+
 export default function Footer() {
   return (
     <footer>
       <div className="container">
         <div className="footer-inner">
-          <span className="footer-copy">Atendo © 2026 · Hecho en Chile 🇨🇱</span>
+          <div className="footer-brand">
+            <AtendoLogo className="footer-logo-svg" variant="inverted" />
+            <div className="footer-brand-text">
+              <span className="footer-copy">© 2026 · Hecho en Chile 🇨🇱</span>
+              <span className="footer-meteoralabs">
+                Producto desarrollado por{' '}
+                <a href="https://meteoralabs.io" target="_blank" rel="noopener noreferrer">MeteoraLabs.io</a>
+              </span>
+            </div>
+          </div>
           <div className="footer-links">
             <a href="#">Instagram</a>
             <a href="#">LinkedIn</a>
