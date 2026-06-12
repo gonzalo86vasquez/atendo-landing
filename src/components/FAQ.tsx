@@ -11,7 +11,7 @@ const faqs = [
   },
   {
     q: '¿Cuánto tiempo tarda en estar listo?',
-    a: 'Generalmente entre 3 y 7 días hábiles desde que nos mandas la información de tu negocio. El proceso de configuración lo hacemos nosotros — tú solo revisas el resultado.'
+    a: 'En 48–72 horas con la información estándar. El proceso de configuración lo hacemos nosotros — tú solo revisas el resultado.'
   },
   {
     q: '¿Necesito tener WhatsApp Business?',
