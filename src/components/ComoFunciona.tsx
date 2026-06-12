@@ -52,7 +52,7 @@ export default function ComoFunciona() {
     <section id="como-funciona" ref={sectionRef}>
       <div className="container">
         <p className="section-label">Cómo funciona</p>
-        <h2 className="section-title">Listo en menos de una semana,<br />en 3 pasos.</h2>
+        <h2 className="section-title">Listo en un par de días,<br />en 3 pasos.</h2>
         <p className="section-sub">No hay plataforma que aprender ni configuración técnica. Nosotros lo hacemos todo.</p>
 
         <div className="steps-timeline" ref={timelineRef}>
@@ -84,8 +84,8 @@ export default function ComoFunciona() {
             <div className="step-card">
               <span className="step-paso">PASO 02</span>
               <h3>Entrenamos a tu asistente</h3>
-              <p>Configuramos el asistente con la personalidad y la información de tu negocio. Lo revisas y nos dices qué ajustar.</p>
-              <span className="step-tag">2–3 días hábiles</span>
+              <p>Configuramos el asistente con la voz y la información de tu negocio. Lo revisas y nos dices qué ajustar.</p>
+              <span className="step-tag">48–72 horas</span>
             </div>
           </div>
 

@@ -106,8 +106,8 @@ export default function Hero() {
               <a href="#como-funciona" className="btn btn-secondary">Mira cómo funciona ↓</a>
             </div>
             <div className="hero-proof" ref={proofRef}>
-              <span>Tu negocio nunca cierra</span>
-              <span>Lo configuramos en tan solo unos días</span>
+              <span>Sin contrato anual</span>
+              <span>Lo configuramos en 48–72 horas</span>
               <span>Precios en pesos chilenos</span>
             </div>
           </div>
