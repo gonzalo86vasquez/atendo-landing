@@ -52,7 +52,7 @@ export default function ComoFunciona() {
     <section id="como-funciona" ref={sectionRef}>
       <div className="container">
         <p className="section-label">Cómo funciona</p>
-        <h2 className="section-title">Listo en 48–72 horas,<br />en 3 pasos.</h2>
+        <h2 className="section-title">Listo en un par de días,<br />en 3 pasos.</h2>
         <p className="section-sub">No hay plataforma que aprender ni configuración técnica. Nosotros lo hacemos todo.</p>
 
         <div className="steps-timeline" ref={timelineRef}>
